@@ -1,12 +1,17 @@
 *{
     /* lägg till padding och margin? */
     box-sizing: border-box;
-    /* font-family:addfontfamilyhere :) */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: lighter;
 }
 
 body{
     background-color: lightgrey;
     background-image: url(addimagenamehere.jpg);
+}
+
+.header-container {
+    text-align: center;
 }
 
 h1{
