@@ -3,24 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pixabay Image Search</title>
-
+    
     <link rel="stylesheet" href="style.css" />
     <script src="main.js" defer></script>
     
+    <title>Pixabay Image Search</title>
+    
 </head>
 <body>
-    <h1>Pixabay Image Search</h1>
+   <header>
+       <h1>Pixabay Image Search</h1>
+   </header>
     
-    <div class="searchbar">
-        <form>
-            <label for="searchbar"></label>
-            <input type="text" id="searchbar" name="searchbar" value="Search for photos">
-            
-            <label for="color"> </label>
-            <select name="color" id="color">
-                <option value="anyColor">Any color</option>
-                <option value="red">Red</option>
+   <main>
+       <div class="search-options">
+           <form>
+               <label for="searchbar"></label>
+               <input type="search" id="searchbar" name="searchbar" value="Search for photos">
+               
+               <label for="color-choice"> </label>
+               <select name="color-choice" id="color-choice">
+                   <option value="anyColor">Any color</option>
+                   <option value="red">Red</option>
                 <option value="blue">Blue</option>
                 <option value="green">Green</option>
                 <option value="">Pink</option>
@@ -29,10 +33,18 @@
                 
             </select>
             
-            <input type="submit" value="Submit">
+            <input type="submit" id="submit" value="Submit">
         </form>
     </div>
-        
+</main>
+
+<footer>
+    <ul>
+        <li><button type="button">Previous</button></li>
+        <li><button type="button">Next</button></li>
+    </ul>
+</footer>
+
 
     
 </body>

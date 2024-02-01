@@ -1,9 +1,62 @@
+*{
+    /* lägg till padding och margin? */
+    box-sizing: border-box;
+    /* font-family:addfontfamilyhere :) */
+}
+
 body{
     background-color: lightgrey;
     background-image: url(addimagenamehere.jpg);
 }
 
-.searchbar{
+h1{
+   text-align: center;
+   font-size: 3rem;
+   margin-bottom: 40px;
+}
+
+.search-options{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 60px;
 }
+
+/* Kan man göra detta mer dry vore det najs :D */
+#searchbar{
+    width: 50%;
+    padding: 10px 20px;
+    margin-right: 5px;
+    border: none;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    font-size: 15px;
+    color:darkslategrey;
+}
+
+#color-choice{
+    width: 25%;
+    padding: 10px 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+    border: none;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    font-size: 15px;
+    color:darkslategrey;
+}
+
+#submit{
+    width: 18%;
+    padding: 10px 5px;
+    margin-left: 5px;
+    border: none;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    font-size: 15px;
+    background-color: lightcoral;
+    color:darkslategrey;
+}
+
