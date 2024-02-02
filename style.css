@@ -21,7 +21,6 @@ body {
 
 /* Huvudsida slut */
 
-
 /* Header start */
 header {
     display: flex;
@@ -122,7 +121,6 @@ li>button {
     grid-template-rows: repeat(3, 1fr);
     grid-gap: 3px;
     /* Minska det totala avståndet mellan bilderna */
-    align-items: center;
 }
 
 /* Search-result bild-design */
@@ -130,13 +128,31 @@ li>button {
     align-items: center;
     object-fit: cover;
     aspect-ratio: 1 / 1;
-    width: 60%;
-    /* Justera bredden efter dina preferenser (till exempel 80%) */
-    height: 60%;
-    /* Justera höjden efter dina preferenser (till exempel 80%) */
+    width: 100%; /* Använd 100% för att fylla hela kolumnens bredd */
+    height: 100%; /* Använd 100% för att fylla hela radens höjd */
 }
 
+/* Justera bilderna i specifika rader */
+.search-results img:nth-child(1),
+.search-results img:nth-child(2),
+.search-results img:nth-child(3),
+.search-results img:nth-child(4) {
+    grid-row: 1; /* Rad 1 */
+}
+
+.search-results img:nth-child(5),
+.search-results img:nth-child(6),
+.search-results img:nth-child(7),
+.search-results img:nth-child(8) {
+    grid-row: 2; /* Rad 2 */
+}
+
+.search-results img:nth-child(9),
+.search-results img:nth-child(10) {
+    grid-row: 3; /* Rad 3 */
+}
 /* Bild-grid slut */
+
 
 
 footer ul {

@@ -23,7 +23,7 @@ async function readPictures() {
     '&q=' + searchInput +
     '&colors=' + colorInput +
     '&image_type=photo' +
-    '&page=' + page +  // Låter användaren byta sida
+    '&page=' + page +  // Låter användaren byta mellan nästa och föregående sida
     '&per_page=10'     // Laddar endast in 10 bilder per sida
   );
 
@@ -63,20 +63,29 @@ function displayImages(result) {
   });
 }
 
+// Skickar användaren till page 1 vid klick på 'submit'
 formElement.addEventListener('submit', (event) => {
   event.preventDefault();
   page = 1;
   readPictures();
 });
 
+// Går till nästa sida vid klick på 'next'
 nextButton.addEventListener('click', () => {
   page++;
   readPictures();
 });
 
+// Återgår till föregårende sida vid klick på 'previous'
 previousButton.addEventListener('click', () => {
   if (page > 1) {
     page--;
     readPictures();
   }
 });
+
+// Funktion för att återställa sidan när man klickar på x i sökrutan. OBS fungerar ej
+// function resetSearch() {
+//   searchbarForm.value = ''; // Återställ sökrutan
+//   searchResults.innerHTML = ''; // Rensa bilderna
+// }
