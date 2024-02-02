@@ -1,3 +1,4 @@
+/* Huvudsida start */
 * {
     /* lägg till padding och margin? */
     box-sizing: border-box;
@@ -7,16 +8,22 @@
 
 body {
     background-color: lightgrey;
+    background-image: linear-gradient(#ababab, #b4b4b4, #e1e1e1, #b4b4b4, #ababab);
+    align-items: center;
 }
 
-/* .page-container {
-    max-width: 90%;
-    background-color: #dddad3;
+.page-container {
+    max-width: 100%;
+    background-image: linear-gradient(#ababab, #b4b4b4, #e1e1e1, #b4b4b4, #ababab);
     margin-left: auto;
     margin-right: auto;
-} */
+}
 
-.header-container {
+/* Huvudsida slut */
+
+
+/* Header start */
+header {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -48,18 +55,13 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white;
+    color: rgb(255, 197, 36);
 }
 
-.background-image {
-    position: relative;
-}
-
-img {
-    max-height: 100%;
-}
+/* Header slut */
 
 
+/* Knappar start */
 .search-options {
     display: flex;
     flex-wrap: wrap;
@@ -67,31 +69,15 @@ img {
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
-}
-
-/* Search-result inställningar för bildlayout */
-.search-results {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    grid-column-gap: 2px;
-    grid-row-gap: 2px;
-
-}
-
-/* Search-result bild-design */
-.search-results img {
-    object-fit: cover;
-    /* Skala bilden för att täcka hela utrymmet utan att deformeras */
-    aspect-ratio: 1 / 1;
-    /* Sätter bildens höjd och bredd till att vara i förhållandet 1:1 */
+    margin-bottom: 10px;
 }
 
 #searchbar,
 #color-choice,
 #submit,
 li>button {
-    color: darkslategrey;
+    color: black;
+    background-color: white;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     font-size: 15px;
@@ -102,9 +88,10 @@ li>button {
 li>button {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: lighter;
-    color: darkslategrey;
+    color: white;
+    background-color: rgb(219, 161, 0);
+    ;
 }
-
 
 #searchbar {
     max-width: 356px;
@@ -122,8 +109,35 @@ li>button {
 #submit {
     max-width: 100px;
     padding: 10px 5px;
-    background-color: lightcoral;
+    background-color: rgb(255, 213, 76);
 }
+
+/* Knappar start */
+
+
+/* Bild-grid start */
+.search-results {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 3px;
+    /* Minska det totala avståndet mellan bilderna */
+    align-items: center;
+}
+
+/* Search-result bild-design */
+.search-results img {
+    align-items: center;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+    width: 60%;
+    /* Justera bredden efter dina preferenser (till exempel 80%) */
+    height: 60%;
+    /* Justera höjden efter dina preferenser (till exempel 80%) */
+}
+
+/* Bild-grid slut */
+
 
 footer ul {
     list-style: none;
