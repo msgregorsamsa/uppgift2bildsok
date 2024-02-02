@@ -47,7 +47,7 @@ function displayImages(result) {
 
     //Själva bilden skapas
     let image = document.createElement('img');
-    image.src = result.previewURL;
+    image.src = result.webformatURL;
     image.alt = result.user + result.tags;
 
     //Anchors osv skapas
