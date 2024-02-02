@@ -9,13 +9,14 @@ body {
     background-color: lightgrey;
 }
 
-li > button {
+li>button {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: lighter;
     color: darkslategrey;
 }
 
 .header-container {
+    /* Flexbox så att bilden kan sträcka sig vid behov */
     text-align: center;
     position: relative;
 }
@@ -51,6 +52,17 @@ h1 {
     margin-bottom: 40px;
 }
 
+
+.main-container {
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 2px;
+    grid-row-gap: 2px;
+
+}
+
 .search-options {
     display: flex;
     flex-wrap: wrap;
@@ -61,7 +73,10 @@ h1 {
 }
 
 
-#searchbar, #color-choice, #submit, li > button {
+#searchbar,
+#color-choice,
+#submit,
+li>button, footer {
     color: darkslategrey;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
@@ -88,3 +103,6 @@ h1 {
     background-color: lightcoral;
 }
 
+footer {
+    /* Skapa flexbox så att de lägger sig horisontellt bredvid varandra längst ner */
+}
