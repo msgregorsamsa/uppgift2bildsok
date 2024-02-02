@@ -1,12 +1,14 @@
 const apiKey = '42110634-489e3894e133cfb0dd6eef927'
 
 let formElement = document.querySelector('form')
-let searchbarForm = document.getElementById('searchbar');
+let searchbarForm = document.getElementById('#searchbar');
+let colorChoice = document.getElementById('#color-choice')
 
+// Ska implementeras
 let searchResults = document.querySelector('.search-results');
 
-let previousButton = document.getElementById('previous-button');
-let nextButton = document.getElementById('next-button');
+let previousButton = document.getElementById('#previous-button');
+let nextButton = document.getElementById('#next-button');
 
 
 let searchInput = '';
@@ -32,7 +34,7 @@ async function readPictures(){
     let result = data.result;
 
     result.map(result => {
-        
+            
     });
 }
 

@@ -76,7 +76,7 @@ h1 {
 #searchbar,
 #color-choice,
 #submit,
-li>button, footer {
+li>button{
     color: darkslategrey;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
@@ -103,6 +103,11 @@ li>button, footer {
     background-color: lightcoral;
 }
 
-footer {
-    /* Skapa flexbox så att de lägger sig horisontellt bredvid varandra längst ner */
-}
+footer ul{
+    list-style:none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    }
