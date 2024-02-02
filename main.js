@@ -2,7 +2,7 @@ const apiKey = '42110634-489e3894e133cfb0dd6eef927'
 
 let formElement = document.querySelector('form')
 let searchbarForm = document.getElementById('searchbar');
-let colorChoice = document.getElementById('color-choice')
+let colorChoice = document.getElementById('color-choice');
 
 let searchResults = document.querySelector('.search-results');
 
@@ -11,17 +11,19 @@ let nextButton = document.getElementById('next-button');
 
 
 let searchInput = '';
+var colorInput = ''; 
 let page = 1;
-
 
 async function readPictures(){
 
     searchInput = searchbarForm.value;
+    colorInput = colorChoice.options[colorChoice.selectedIndex].text.toLowerCase();
 
     let response = await fetch(
                     'https://pixabay.com/api/' +
                     '?key=' + apiKey +
                     '&q=' + searchInput +
+                    '&colors=' + colorInput +
                     '&image_type=photo'
                     );
 
