@@ -55,7 +55,7 @@ function displayImages(result){
             let imageLink = document.createElement('a');
             imageLink.href = result.pageURL;
             imageLink.target = '_blank'; //Om bilden öppnas görs det i en ny flik, vill vi ha det så?
-            imageLink.textContent = 'Se bilden på Pixabay';
+            imageLink.textContent = ''; 
             
             //lägger till ny divbehållare under sökresultaten.
             imageContainer.appendChild(image);
