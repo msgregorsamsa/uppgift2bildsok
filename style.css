@@ -57,6 +57,10 @@ header {
     color: rgb(255, 197, 36);
 }
 
+img {
+    object-fit: fill;
+}
+
 /* Header slut */
 
 
