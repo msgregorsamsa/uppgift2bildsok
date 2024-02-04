@@ -7,13 +7,18 @@
 }
 
 body {
+    box-sizing: border-box;
     background-color: lightgrey;
     background-image: linear-gradient(#ababab, #b4b4b4, #e1e1e1, #b4b4b4, #ababab);
     align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-x: hidden;
+    /*Tar bort horisontell scrollbar*/
 }
 
 .page-container {
-    max-width: 100%;
+    max-width: 80%;
     background-image: linear-gradient(#ababab, #b4b4b4, #e1e1e1, #b4b4b4, #ababab);
     margin-left: auto;
     margin-right: auto;
@@ -57,7 +62,7 @@ header {
     left: 50%;
     transform: translate(-50%, -50%);
     color: rgb(255, 197, 36);
-    padding-top: 8px;
+    padding-top: 10px;
     font-size: 17px;
 }
 
@@ -118,15 +123,17 @@ li>button {
     padding: 10px 5px;
     background-color: rgb(255, 213, 76);
 }
-/* Knappar slutt */
+
+/* Knappar slut */
 
 
 /* Bild-layout start */
 .search-results {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr); /* Ökade antalet rader till 3 */
-    grid-gap: 1px;
+    width: 75%;
+    margin: auto;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
 }
 
 .search-results img {
@@ -136,6 +143,11 @@ li>button {
     width: 100%;
     height: 100%;
 }
+
+.image-container {
+    
+}
+
 /* Bild-layout slut */
 
 footer ul {
