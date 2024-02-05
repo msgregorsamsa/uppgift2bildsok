@@ -95,6 +95,7 @@ li>button {
     font-size: 15px;
     border: none;
     margin-left: 5px;
+    cursor: pointer;
 }
 
 li>button {
@@ -122,6 +123,13 @@ li>button {
     max-width: 100px;
     padding: 10px 5px;
     background-color: rgb(255, 213, 76);
+}
+
+/* Draft */
+#previous-button.disabled{
+    background-color: rgb(183, 182, 178);
+    color: #555555;
+    cursor: not-allowed;
 }
 
 /* Knappar slut */
