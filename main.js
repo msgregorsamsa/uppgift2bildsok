@@ -50,12 +50,18 @@ function displayImages(result) {
     image.src = result.webformatURL;
     image.alt = result.user + result.tags;
 
-    //Anchors osv skapas
+    // Anchors osv skapas
     let imageLink = document.createElement('a');
     imageLink.href = result.pageURL;
     imageLink.target = '_blank';
-    imageLink.textContent = "Photographer: " + result.user + " " + "Description :" + result.tags;
 
+    // Skapa en paragraf med formaterad text
+    let paragraph = document.createElement('p');
+    paragraph.textContent = `Photographer: ${result.user}
+    \nDescription: ${result.tags}`;
+
+    // Lägg till p-elementet i imageLink
+    imageLink.appendChild(paragraph);
 
     // Lägg till klassen "image-info"
     imageLink.classList.add('imageInformation');

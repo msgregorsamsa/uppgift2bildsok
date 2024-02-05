@@ -128,14 +128,13 @@ li>button {
 
 
 /* Bild-layout start */
-
 .search-results {
     display: grid;
     width: 75%;
     margin: auto;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(5, 1fr);
-    gap: 35px;
+    gap: 5px;
 }
 
 .search-results img {
@@ -144,38 +143,35 @@ li>button {
     aspect-ratio: 1 / 1;
     width: 100%;
     height: 100%;
+    position: relative;
 }
 
 /* Styr taggar och fotografnamn */
-.imageInformation {
-    color: yellow;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 20px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
+.image-container {
+    position: relative;
+    overflow: hidden; /* För att texten inte ska gå utanför bildens gränser */
 }
 
- .imageInformation .overlay {
+.imageInformation {
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
+    bottom: 0; /* Justera vertikalt läge beroende på var du vill ha texten */
+    left: 0; /* Justera horisontellt läge beroende på var du vill ha texten */
+    width: 100%; /* Full bredd av förälderelementet */
+    background: rgba(82, 82, 82, 0.7); /* Bakgrundsfärg för att göra texten tydligare */
+    color: #fff; /* Textfärg */
+    padding: 10px; /* Justera padding efter behov */
+    box-sizing: border-box;
     opacity: 0;
-    transition: .5s ease;
-    background-color: #008CBA;
-  }
-  
-  .imageInformation:hover .overlay {
-    opacity: 1;
-  }
+    transition: opacity 0.3s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
+.image-container:hover .imageInformation {
+    opacity: 1;
+}
 
 /* Bild-layout slut */
+
 
 footer ul {
     list-style: none;
