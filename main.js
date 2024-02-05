@@ -54,7 +54,11 @@ function displayImages(result) {
     let imageLink = document.createElement('a');
     imageLink.href = result.pageURL;
     imageLink.target = '_blank';
-    imageLink.textContent = '';
+    imageLink.textContent = "Photographer: " + result.user + " " + "Description :" + result.tags;
+
+
+    // Lägg till klassen "image-info"
+    imageLink.classList.add('imageInformation');
 
     //lägger till ny divbehållare under sökresultaten.
     imageContainer.appendChild(image);
@@ -66,7 +70,7 @@ function displayImages(result) {
 // Skickar användaren till page 1 vid klick på 'submit'
 formElement.addEventListener('submit', (event) => {
   event.preventDefault();
-  
+
   // Uppdatera sökparametrarna
   searchInput = searchbarForm.value;
   colorInput = colorChoice.options[colorChoice.selectedIndex].text.toLowerCase();
@@ -80,7 +84,7 @@ formElement.addEventListener('submit', (event) => {
 nextButton.addEventListener('click', () => {
   page++;
   readPictures();
-  
+
   // Scrolla upp till toppen av sidan
   window.scrollTo({
     top: 0,
