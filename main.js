@@ -105,3 +105,16 @@ previousButton.addEventListener('click', () => {
     readPictures();
   }
 });
+
+// Draft
+previousButton.addEventListener('click', () => {
+
+  if(page === 1){
+    previousButton.disabled = true;
+    previousButton.classList.add('disabled');
+  }
+  else{
+    previousButton.disabled = false;
+    previousButton.classList.remove('disabled');
+  }
+  });
