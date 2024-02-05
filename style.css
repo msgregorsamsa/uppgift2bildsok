@@ -103,8 +103,10 @@ li>button {
     font-weight: lighter;
     color: white;
     background-color: rgb(219, 161, 0);
-    ;
+    width: 100px;
+    height: 40px;
 }
+
 
 #searchbar {
     max-width: 356px;
@@ -126,7 +128,7 @@ li>button {
 }
 
 /* Draft */
-#previous-button.disabled{
+#previous-button.disabled {
     background-color: rgb(183, 182, 178);
     color: #555555;
     cursor: not-allowed;
@@ -157,21 +159,33 @@ li>button {
 /* Styr taggar och fotografnamn */
 .image-container {
     position: relative;
-    overflow: hidden; /* För att texten inte ska gå utanför bildens gränser */
+    overflow: hidden;
+    /* För att texten inte ska gå utanför bildens gränser */
 }
 
 .imageInformation {
     position: absolute;
-    bottom: 0; /* Justera vertikalt läge beroende på var du vill ha texten */
-    left: 0; /* Justera horisontellt läge beroende på var du vill ha texten */
-    width: 100%; /* Full bredd av förälderelementet */
-    background: rgba(82, 82, 82, 0.7); /* Bakgrundsfärg för att göra texten tydligare */
-    color: #fff; /* Textfärg */
-    padding: 10px; /* Justera padding efter behov */
+    bottom: 0;
+    /* Justera vertikalt läge beroende på var du vill ha texten */
+    left: 0;
+    /* Justera horisontellt läge beroende på var du vill ha texten */
+    width: 100%;
+    /* Full bredd av förälderelementet */
     box-sizing: border-box;
     opacity: 0;
     transition: opacity 0.3s ease;
+
+    background: rgba(82, 82, 82, 0.7);
+    /* Bakgrundsfärg för att göra texten tydligare */
+    color: #fff;
+    /* Textfärg */
+    padding: 10px;
+    /* Justera padding efter behov */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: none;
+    text-align: center;
 }
 
 .image-container:hover .imageInformation {
@@ -188,4 +202,162 @@ footer ul {
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
+}
+
+/* Mediaquery för surfplattor*/
+
+@media only screen and (max-width: 1024px) {
+    body {
+        box-sizing: border-box;
+        background-color: lightgrey;
+        background-image: linear-gradient(#ababab, #b4b4b4, #e1e1e1, #b4b4b4, #ababab);
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        overflow-x: hidden;
+    }
+
+    .imageSearch-text {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: rgb(255, 197, 36);
+        padding-top: 10px;
+        font-size: 15px;
+    }
+
+    #searchbar,
+    #color-choice,
+    #submit,
+    li>button {
+        color: #555555;
+        background-color: white;
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        font-size: 20px;
+        border: none;
+        margin-left: 5px;
+        cursor: pointer;
+    }
+
+    li>button {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: lighter;
+        color: white;
+        background-color: rgb(219, 161, 0);
+        width: 100px;
+        height: 40px;
+    }
+
+    #submit {
+        max-width: 100px;
+        padding: 10px 5px;
+        background-color: rgb(255, 213, 76);
+    }
+
+    .page-container {
+        max-width: 95%;
+    }
+
+    .search-results {
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+    }
+
+    #searchbar {
+        max-width: 40%;
+    }
+
+    #color-choice,
+    #submit {
+        max-width: 100%;
+        margin-right: 0;
+    }
+}
+
+/* Mediaquery för mobiler */
+
+@media only screen and (max-width: 480px) {
+
+    body {
+        box-sizing: border-box;
+        background-color: lightgrey;
+        background-image: linear-gradient(#ababab, #b4b4b4, #e1e1e1, #b4b4b4, #ababab);
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        overflow-x: hidden;
+    }
+
+    .imageSearch-text {
+        transform: translate(-50%, -50%);
+        color: rgb(255, 197, 36);
+        padding-top: 10px;
+        font-size: 20px;
+        max-width: 100%;
+        display: block;
+    }
+
+    #searchbar,
+    #color-choice,
+    #submit,
+    li>button {
+        color: #555555;
+        background-color: white;
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        font-size: 10px;
+        border: none;
+        margin-left: 5px;
+        cursor: pointer;
+    }
+
+    .footer {
+       justify-content: center;
+    }
+
+    li>button {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: lighter;
+        color: white;
+        background-color: rgb(219, 161, 0);
+        margin: 5px;
+        width: 100px;
+        height: 30px;
+        font-size: 16px;
+    }
+
+    #submit {
+        max-width: 20px;
+        padding: 10px 5px;
+        background-color: rgb(255, 213, 76);
+    }
+
+    .page-container {
+        max-width: 95%;
+    }
+
+    .search-results {
+        width: 100%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(10, 1fr);
+    }
+
+    #searchbar {
+        max-width: 50%;
+    }
+
+    .search-options {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #color-choice,
+    #submit {
+        max-width: 20%;
+        margin-right: 0;
+    }
+
 }

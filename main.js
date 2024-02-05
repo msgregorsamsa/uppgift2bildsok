@@ -58,7 +58,7 @@ function displayImages(result) {
     // Skapa en paragraf med formaterad text
     let paragraph = document.createElement('p');
     paragraph.textContent = `Photographer: ${result.user}
-    \nDescription: ${result.tags}`;
+    \n | Description: ${result.tags}`;
 
     // Lägg till p-elementet i imageLink
     imageLink.appendChild(paragraph);
