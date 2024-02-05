@@ -80,6 +80,12 @@ formElement.addEventListener('submit', (event) => {
 nextButton.addEventListener('click', () => {
   page++;
   readPictures();
+  
+  // Scrolla upp till toppen av sidan
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth' // Om du vill ha en smidig rullningseffekt
+  });
 });
 
 // Återgår till föregående sida vid klick på 'previous'
