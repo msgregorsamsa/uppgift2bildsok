@@ -13,18 +13,20 @@ let searchInput = '';
 let colorInput = '';
 let page = 1;
 
-async function readPictures() {
-  searchInput = searchbarForm.value;
-  colorInput = colorChoice.options[colorChoice.selectedIndex].text.toLowerCase();
+// Initiera sökparametrarna baserat på formuläret
+searchInput = searchbarForm.value;
+colorInput = colorChoice.options[colorChoice.selectedIndex].text.toLowerCase();
 
+async function readPictures() {
+  // Inkludera sökparametrarna i API-anropet
   let response = await fetch(
     'https://pixabay.com/api/' +
     '?key=' + apiKey +
     '&q=' + searchInput +
     '&colors=' + colorInput +
     '&image_type=photo' +
-    '&page=' + page +  // Låter användaren byta mellan nästa och föregående sida
-    '&per_page=10'     // Laddar endast in 10 bilder per sida
+    '&page=' + page +
+    '&per_page=10'
   );
 
   let data = await response.json();
@@ -35,12 +37,10 @@ async function readPictures() {
 
 //Går igenom sökresultatet.
 function displayImages(result) {
-
   //Rensar ut eventuella tidigare sökningar
   searchResults.innerHTML = '';
 
   result.map(result => {
-
     //Skapar en ny div för varje bildelement
     let imageContainer = document.createElement('div');
     imageContainer.className = 'image-container';
@@ -53,7 +53,7 @@ function displayImages(result) {
     //Anchors osv skapas
     let imageLink = document.createElement('a');
     imageLink.href = result.pageURL;
-    imageLink.target = '_blank';  //Om bilden öppnas görs det i en ny flik, vill vi ha det så?
+    imageLink.target = '_blank';
     imageLink.textContent = '';
 
     //lägger till ny divbehållare under sökresultaten.
@@ -66,6 +66,12 @@ function displayImages(result) {
 // Skickar användaren till page 1 vid klick på 'submit'
 formElement.addEventListener('submit', (event) => {
   event.preventDefault();
+  
+  // Uppdatera sökparametrarna
+  searchInput = searchbarForm.value;
+  colorInput = colorChoice.options[colorChoice.selectedIndex].text.toLowerCase();
+
+  // Gör API-anropet
   page = 1;
   readPictures();
 });
@@ -76,16 +82,10 @@ nextButton.addEventListener('click', () => {
   readPictures();
 });
 
-// Återgår till föregårende sida vid klick på 'previous'
+// Återgår till föregående sida vid klick på 'previous'
 previousButton.addEventListener('click', () => {
   if (page > 1) {
     page--;
     readPictures();
   }
 });
-
-// Funktion för att återställa sidan när man klickar på x i sökrutan. OBS fungerar ej
-// function resetSearch() {
-//   searchbarForm.value = ''; // Återställ sökrutan
-//   searchResults.innerHTML = ''; // Rensa bilderna
-// }
