@@ -120,6 +120,12 @@ li>button {
     cursor: not-allowed;
 }
 
+#next-button.disabled {
+    background-color: rgb(183, 182, 178);
+    color: #555555;
+    cursor: not-allowed;
+}
+
 /* Knappar slut */
 
 

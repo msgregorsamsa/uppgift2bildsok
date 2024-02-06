@@ -31,8 +31,12 @@ async function readPictures() {
 
   let data = await response.json();
   let result = data.hits;
+  let totalHits = data.totalHits;
+  let perPage = 10; // Antal resultat per sida
 
+  totalPages = Math.ceil(totalHits / perPage);
   displayImages(result);
+  updateButtonState();
 }
 
 //Går igenom sökresultatet.
@@ -40,7 +44,7 @@ function displayImages(result) {
   //Rensar ut eventuella tidigare sökningar
   searchResults.innerHTML = '';
 
-  result.map(result => {
+  result.forEach(result => { // Använd forEach istället för map
     //Skapar en ny div för varje bildelement
     let imageContainer = document.createElement('div');
     imageContainer.className = 'image-container';
@@ -90,6 +94,7 @@ formElement.addEventListener('submit', (event) => {
 nextButton.addEventListener('click', () => {
   page++;
   readPictures();
+  updateButtonState();
 
   // Scrolla upp till toppen av sidan
   window.scrollTo({
@@ -104,17 +109,31 @@ previousButton.addEventListener('click', () => {
     page--;
     readPictures();
   }
+  updateButtonState();
 });
 
-// Draft
-previousButton.addEventListener('click', () => {
-
-  if(page === 1){
+function updateButtonState() {
+  // Disable previous button on page 1
+  if (page === 1) {
     previousButton.disabled = true;
     previousButton.classList.add('disabled');
-  }
-  else{
+  } else {
     previousButton.disabled = false;
     previousButton.classList.remove('disabled');
   }
-  });
+
+  // Disable next button on last page
+  if (page === totalPages) {
+    nextButton.disabled = true;
+    nextButton.classList.add('disabled');
+  } else {
+    nextButton.disabled = false;
+    nextButton.classList.remove('disabled');
+  }
+
+  // Uppdatera totalPages om den är mindre än page (till exempel när användaren gör en ny sökning)
+  if (totalPages < page) {
+    totalPages = page;
+  }
+}
+
