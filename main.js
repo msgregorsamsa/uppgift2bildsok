@@ -13,12 +13,10 @@ let searchInput = '';
 let colorInput = '';
 let page = 1;
 
-// Initiera sökparametrarna baserat på formuläret
 searchInput = searchbarForm.value;
 colorInput = colorChoice.options[colorChoice.selectedIndex].text.toLowerCase();
 
 async function readPictures() {
-  // Inkludera sökparametrarna i API-anropet
   let response = await fetch(
     'https://pixabay.com/api/' +
     '?key=' + apiKey +
@@ -32,45 +30,37 @@ async function readPictures() {
   let data = await response.json();
   let result = data.hits;
   let totalHits = data.totalHits;
-  let perPage = 10; // Antal resultat per sida
+  let perPage = 10;
 
   totalPages = Math.ceil(totalHits / perPage);
   displayImages(result);
   updateButtonState();
 }
 
-//Går igenom sökresultatet.
 function displayImages(result) {
-  //Rensar ut eventuella tidigare sökningar
   searchResults.innerHTML = '';
 
-  result.forEach(result => { // Använd forEach istället för map
-    //Skapar en ny div för varje bildelement
+  result.forEach(result => {
     let imageContainer = document.createElement('div');
     imageContainer.className = 'image-container';
 
-    //Själva bilden skapas
     let image = document.createElement('img');
     image.src = result.webformatURL;
     image.alt = result.user + result.tags;
 
-    // Anchors osv skapas
     let imageLink = document.createElement('a');
     imageLink.href = result.pageURL;
     imageLink.target = '_blank';
 
-    // Skapa en paragraf med formaterad text
+   
     let paragraph = document.createElement('p');
     paragraph.textContent = `Photographer: ${result.user}
     \n | Description: ${result.tags}`;
 
-    // Lägg till p-elementet i imageLink
     imageLink.appendChild(paragraph);
 
-    // Lägg till klassen "image-info"
     imageLink.classList.add('imageInformation');
 
-    //lägger till ny divbehållare under sökresultaten.
     imageContainer.appendChild(image);
     imageContainer.appendChild(imageLink);
     searchResults.appendChild(imageContainer);
@@ -81,11 +71,9 @@ function displayImages(result) {
 formElement.addEventListener('submit', (event) => {
   event.preventDefault();
 
-  // Uppdatera sökparametrarna
   searchInput = searchbarForm.value;
   colorInput = colorChoice.options[colorChoice.selectedIndex].text.toLowerCase();
 
-  // Gör API-anropet
   page = 1;
   readPictures();
 });
@@ -99,7 +87,7 @@ nextButton.addEventListener('click', () => {
   // Scrolla upp till toppen av sidan
   window.scrollTo({
     top: 0,
-    behavior: 'smooth' // Om du vill ha en smidig rullningseffekt
+    behavior: 'smooth'
   });
 });
 
@@ -113,7 +101,6 @@ previousButton.addEventListener('click', () => {
 });
 
 function updateButtonState() {
-  // Disable previous button on page 1
   if (page === 1) {
     previousButton.disabled = true;
     previousButton.classList.add('disabled');
@@ -122,18 +109,12 @@ function updateButtonState() {
     previousButton.classList.remove('disabled');
   }
 
-  // Disable next button on last page
   if (page === totalPages) {
     nextButton.disabled = true;
     nextButton.classList.add('disabled');
   } else {
     nextButton.disabled = false;
     nextButton.classList.remove('disabled');
-  }
-
-  // Uppdatera totalPages om den är mindre än page (till exempel när användaren gör en ny sökning)
-  if (totalPages < page) {
-    totalPages = page;
   }
 }
 

@@ -51,6 +51,7 @@ header {
     color: rgb(255, 197, 36);
     padding-top: 10px;
     font-size: 17px;
+    text-wrap: nowrap;
 }
 
 img {
@@ -96,7 +97,7 @@ li>button {
 
 #searchbar {
     max-width: 356px;
-    flex: wrap;
+    flex: 1;
     padding: 10px 20px;
     margin-right: 5px;
 }
@@ -113,7 +114,6 @@ li>button {
     background-color: rgb(255, 213, 76);
 }
 
-/* Draft */
 #previous-button.disabled {
     background-color: rgb(183, 182, 178);
     color: #555555;
@@ -137,6 +137,7 @@ li>button {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(5, 1fr);
     gap: 5px;
+
 }
 
 .search-results img {
@@ -148,7 +149,7 @@ li>button {
     position: relative;
 }
 
-/* Styr taggar och fotografnamn */
+/* Styr taggar och fotografnamn i bildlayout */
 .image-container {
     position: relative;
     overflow: hidden;
@@ -290,6 +291,7 @@ footer ul {
         color: rgb(255, 197, 36);
         padding-top: 10px;
         font-size: 15px;
+        text-wrap: wrap;
     }
 
     #searchbar,
@@ -352,15 +354,3 @@ footer ul {
         margin-right: 0;
     }
 }
-
-/* @media only screen and (max-width: 1280px) {
-
-    .header-text {
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: rgb(255, 197, 36);
-        padding-top: 10px;
-        font-size: 17px;
-    }
-} */
