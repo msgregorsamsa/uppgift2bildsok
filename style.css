@@ -18,7 +18,7 @@ body {
 }
 
 .page-container {
-    max-width: 85%;
+    max-width: 95%;
     background-image: linear-gradient(#ababab, #b4b4b4, #e1e1e1, #b4b4b4, #ababab);
     margin-left: auto;
     margin-right: auto;
@@ -132,10 +132,10 @@ li>button {
 /* Bild-layout start */
 .search-results {
     display: grid;
-    width: 75%;
+    width: 92%;
     margin: auto;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
     gap: 5px;
 
 }
@@ -261,7 +261,7 @@ footer ul {
     .search-results {
         width: 100%;
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(5, 1fr);
+        grid-template-rows: repeat(6, 1fr);
     }
 
     #color-choice,
@@ -336,7 +336,7 @@ footer ul {
     .search-results {
         width: 100%;
         grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: repeat(10, 1fr);
+        grid-template-rows: repeat(12, 1fr);
     }
 
     #searchbar {

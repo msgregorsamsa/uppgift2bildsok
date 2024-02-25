@@ -24,13 +24,13 @@ async function readPictures() {
     '&colors=' + colorInput +
     '&image_type=photo' +
     '&page=' + page +
-    '&per_page=10'
+    '&per_page=12'
   );
 
   let data = await response.json();
   let result = data.hits;
   let totalHits = data.totalHits;
-  let perPage = 10;
+  let perPage = 12;
 
   totalPages = Math.ceil(totalHits / perPage);
   displayImages(result);
@@ -52,7 +52,7 @@ function displayImages(result) {
     imageLink.href = result.pageURL;
     imageLink.target = '_blank';
 
-   
+
     let paragraph = document.createElement('p');
     paragraph.textContent = `Photographer: ${result.user}
     \n | Description: ${result.tags}`;
